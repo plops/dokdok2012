@@ -1,0 +1,151 @@
+%% This is a template that demonstrates the submission of a contribution to DoKDoK
+%%
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} %if your LaTeX editor does not support Unicode (UTF8), 
+														%change this option to ansinew or latin1 
+% if you need additional packages, load them here, but mind possible interference
+% with the DokDok package!
+\usepackage{courier}
+% now, load the generic DokDok package
+\usepackage{dokdok}
+
+
+\begin{document}
+
+\dokdoktitle{Spatio-angular microscopy}
+\dokdokauthor{Martin Kielhorn\sup{*1,2}, and Rainer Heintzmann\sup{1,2,3}}
+\dokdokaffiliation{
+\sup{1}Institute of Photonic Technology, Albert-Einstein Str. 9, 07745 Jena, Germany}
+\dokdokaffiliation{
+\sup{2}Institute of Physical Chemistry, Friedrich-Schiller-Universität Jena, Helmholtzweg 4, 07743 Jena, Germany}
+\dokdokemail{kielhorn.martin@googlemail.com}
+
+\begin{abstract}
+\noindent \bfseries{}
+\end{abstract}
+
+\begin{multicols}{2}
+
+\dokdoksection{Introduction}	% please use the formated \dokdoksection{} command instead of \section*{}!
+As opposed to conventional conferences it is also the purpose of this abstract to give the reader a quick introduction into your topic. When preparing your 2-pages paper, keep in mind that most of the audience will not be specialists in your topic. 
+
+The following is a template for the preparation of a properly formatted paper for DoKDoK 2012. All accepted submissions will be compiled into a conference proceedings and will also appear on the website.
+
+All submissions should stick to this format. Templates are available in \LaTeX{} as well as Microsoft Word format. Please note that submissions will be accepted in PDF format only! Details of the preparation procedure are described below.
+
+
+\dokdoksection{Formatting}
+A proper submission is two pages long and in two columns format. 
+We use the font Times New Roman throughout the manuscript.
+Manuscripts are not copy-edited and must be provided publication-ready in PDF format by the authors.
+Standard font size is 11pt for the text, figure captions and section headings, 12pt for the title, 11.5pt for the author list and 10.5pt for affiliations and the corresponding author's contact information.
+Paragraphs use an indention of 12pt.
+The margins are 2.5cm top, 3.5cm bottom and 2cm for the left and right margin.
+
+\paragraph{Math.} Non-inline equations are numbered in parenthesis and referred to accordingly. An example is given in Eq. \eqref{eq:equation1}.
+\begin{align}
+\frac{\partial}{\partial z}E_{nm}(z,\omega)=&i\left[\beta(\omega)-\omega\beta_1(\omega_0) \right]E_{nm}(z,\omega)\nonumber\\
+&+ic(\omega)\sum_{n' m'}C_{nm}^{n'm'}E_{n'm'}(z,\omega)\nonumber\\
+&+i\frac{k^2}{2\beta(\omega)}P_{nm}^\text{NL}(z,\omega)\label{eq:equation1}
+\end{align}
+
+\paragraph{Figures.}
+Figures should be embedded in the document and labeled Fig. 1, Fig. 2, and so on.
+Subfigures use alphabetic lettering i.e. Fig. 1~(a). Please note that bitmap images should be inserted in sufficiently high resolution to ensure good printing quality, at least 300dpi. An example is given in Fig. \ref{fig:figure1}. 
+Please note also the notes on \LaTeX{} if you use it to prepare your manuscript.
+
+\paragraph{References.}
+References should be numbered in square brackets in order of appearance, see \cite{Saleh1991}.
+An appropriate list of references should appear at the end of the paper.
+An example of proper formatting is given in this sample manuscript.
+
+\paragraph{\LaTeX.}
+To make submission as easy as possible for you, we provide a DokDok style file \verb|dokdok.sty|. 
+This file loads all necessary packages and sets the parameters.
+We further provide a custom BIB\TeX style file \verb|dokdok.bst| which ensures proper formatting of the reference list.
+
+However, there is a particular issue you should keep in mind when dealing with figures.
+Since we use the \verb|multicol| and \verb|float| package to typeset the manuscript, all figures need to be set with the \verb|\begin{figure}[H]|\dots{} option (except for figures spanning both columns which are set by \verb|\begin{figure*}|\dots{} as usual) and will appear exactly at the position in the text where they are placed as does Fig. \ref{fig:figure1} after this sentence.
+
+\begin{figure}[H]
+\includegraphics[width=0.48\textwidth]{figure1.png}
+\caption{Some interesting pictures. (a) Schloss Oppurg. (b) Directions.}
+\label{fig:figure1}
+\end{figure}
+
+%% For figures spanning both columns, use:
+%\begin{figure*}
+%\includegraphics[width=0.48\textwidth]{figure1.png}
+%\caption{Some interesting pictures. (a) Schloss Oppurg. (b) Directions.}
+%\label{fig:figure1}
+%\end{figure*}
+
+\dokdoksection{Experimental Setup}
+
+The experiment will produce results from 7$^\text{th}$ to 11$^\text{th}$ October 2012 at Schloss Oppurg (schloss-oppurg.cjd.de) in Oppurg in Germany. For more details on the experimental layout see Fig.~\ref{fig:figure1}~(a) and Fig.~\ref{fig:figure1}~(b) for some close up on components of the setup.
+
+Four days of the conference will be devoted mostly to talks, which will be 20 to 30 Minutes each to give the author enough time to introduce important concepts \cite{ Service2010, Ryskin2010, Evans2011, Nifenecker2011, Zayats2005, Novotny1994} to the general audience.
+
+Auxiliary parts of the experiment will be poster sessions and group activities, which will be announced.
+
+
+\dokdoksection{Important Dates}
+\begin{description}
+	\item[June 1, 2012:] Deadline for the submission of this document.
+	\item[July 16, 2012:] Notifications on the acceptance of the submission as either oral presentation or poster presentation are sent.
+	\item[September 7, 2012:] Registration closes.
+	\item[October 7--11, 2012:] DoKDoK takes place at Schloss Oppurg.
+\end{description}
+
+\end{multicols}
+
+\begin{center}
+\rule{0.75\textwidth}{1pt}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BIBLIOGRAPHY USING BIBTeX
+%%
+
+\bibliographystyle{dokdok}
+\bibliography{biblio}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% If you are NOT using BIBTEX, please follow this scheme:
+%%
+
+%\begin{thebibliography}{1}
+%
+%\bibitem{Saleh1991}
+%B.~Saleh, M.~Teich, {\it Fundamentals of Photonics\/} (John Wiley \& Sons, New
+  %York, 1991).
+%
+%\bibitem{Service2010}
+%R.~F. Service, A.~Cho, {\it Science\/} {\bf 330}, 1622 (2010).
+%
+%\bibitem{Ryskin2010}
+%G.~Ryskin, {\it Reports on Progress in Physics\/} {\bf 73}, 122801 (2010).
+%
+%\bibitem{Evans2011}
+%J.~A. Evans, J.~G. Foster, {\it Science\/} {\bf 331}, 721 (2011).
+%
+%\bibitem{Nifenecker2011}
+%H.~Nifenecker, {\it Reports on Progress in Physics\/} {\bf 74}, 022801 (2011).
+%
+%\bibitem{Zayats2005}
+%A.~Zayats, I.~Smolyaninov, A.~Maradudin, {\it Physics Reports\/} {\bf 408}, 131
+  %(2005).
+%
+%\bibitem{Novotny1994}
+%L.~Novotny, C.~Hafner, {\it Physical Review E\/} {\bf 50}, 4094 (1994).
+%
+%\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
