@@ -3,100 +3,140 @@
 \documentclass[a4paper, 11pt]{article}
 
 \usepackage[utf8]{inputenc} %if your LaTeX editor does not support Unicode (UTF8), 
-														%change this option to ansinew or latin1 
+% change this option to ansinew or latin1 
 % if you need additional packages, load them here, but mind possible interference
 % with the DokDok package!
 \usepackage{courier}
 % now, load the generic DokDok package
 \usepackage{dokdok}
 
+\usepackage{color}
 
 \begin{document}
 
 \dokdoktitle{Spatio-angular microscopy}
+
 \dokdokauthor{Martin Kielhorn\sup{*1,2}, and Rainer Heintzmann\sup{1,2,3}}
-\dokdokaffiliation{
-\sup{1}Institute of Photonic Technology, Albert-Einstein Str. 9, 07745 Jena, Germany}
-\dokdokaffiliation{
-\sup{2}Institute of Physical Chemistry, Friedrich-Schiller-Universität Jena, Helmholtzweg 4, 07743 Jena, Germany}
-\dokdokemail{kielhorn.martin@googlemail.com}
+
+\dokdokaffiliation{ \sup{1}Institute of Photonic Technology,
+  Albert-Einstein Str. 9, 07745 Jena, Germany}
+
+\dokdokaffiliation{ \sup{2}Randall Division of Cell \& Molecular
+  Biophysics, King's College London, NHH, Guy's Campus, London SE1
+  1UL, U.K.}
+
+\dokdokaffiliation{ \sup{3}Institute of Physical Chemistry,
+  Friedrich-Schiller-Universität Jena, Helmholtzweg 4, 07743 Jena,
+  Germany}
+
+\dokdokemail{kielhorn.martin@gmail.com}
 
 \begin{abstract}
-\noindent \bfseries{}
+  \noindent \bfseries{ Photobleaching and phototoxicity pose a problem
+    in live cell imaging. Excessive excitation light can induce
+    reactive oxygen species in observed organisms. These can disturb
+    signalling pathways and alter the natural response of the
+    sample. We augment a widefield epifluorescence microscope with two
+    spatial light modulators (SLM). These allow illumination with
+    arbitrary patterns. Depending on the distribution of fluorophores
+    a considerable reduction in photobleaching and phototoxicity can
+    be expected.}
 \end{abstract}
 
 \begin{multicols}{2}
 
-\dokdoksection{Introduction}	% please use the formated \dokdoksection{} command instead of \section*{}!
-As opposed to conventional conferences it is also the purpose of this abstract to give the reader a quick introduction into your topic. When preparing your 2-pages paper, keep in mind that most of the audience will not be specialists in your topic. 
+\dokdoksection{Introduction}
 
-The following is a template for the preparation of a properly formatted paper for DoKDoK 2012. All accepted submissions will be compiled into a conference proceedings and will also appear on the website.
+In a fluorescence microscope excitation light is shone through an
+objective onto a specimen containing fluorophores. These fluorophores
+absorb excitation light and subsequently emit photons of lower
+energy. The fluorescence light of in-focus fluorophores is formed into
+a sharp image, light from out-of-focus areas deteriorates the image by
+creating a blurred background.
 
-All submissions should stick to this format. Templates are available in \LaTeX{} as well as Microsoft Word format. Please note that submissions will be accepted in PDF format only! Details of the preparation procedure are described below.
+Nowadays it is common to observe the dynamic properties of
+fluorescently labelled proteins and extract quantitative information
+about the structures they form within living cells. The length of the
+study and the accuracy of the result of a given experiment, however,
+is limited by photobleaching and light induced toxicity in the
+biological specimen.
 
+When fluorophores are optically excited, they occasionally end up in
+the first excited triplet state $T_1$ by intersystem crossing. The
+lifetimes of $T_1$ are sufficiently long, that the excited
+fluorophores react with molecular oxygen in a triplet--triplet
+annihilation reaction \cite{Linde2011a}. The resulting singulet oxygen
+will react quickly with neighbouring molecules and can locally damage
+the cell. This process can lead to cell death or more subtle effects
+such as the suppression of normal cell signalling functions.
 
-\dokdoksection{Formatting}
-A proper submission is two pages long and in two columns format. 
-We use the font Times New Roman throughout the manuscript.
-Manuscripts are not copy-edited and must be provided publication-ready in PDF format by the authors.
-Standard font size is 11pt for the text, figure captions and section headings, 12pt for the title, 11.5pt for the author list and 10.5pt for affiliations and the corresponding author's contact information.
-Paragraphs use an indention of 12pt.
-The margins are 2.5cm top, 3.5cm bottom and 2cm for the left and right margin.
+In order to extend experiments in time and to follow the fate of cells
+over many generations, a substantial reduction of unnecessary
+illumination would be desired.
 
-\paragraph{Math.} Non-inline equations are numbered in parenthesis and referred to accordingly. An example is given in Eq. \eqref{eq:equation1}.
-\begin{align}
-\frac{\partial}{\partial z}E_{nm}(z,\omega)=&i\left[\beta(\omega)-\omega\beta_1(\omega_0) \right]E_{nm}(z,\omega)\nonumber\\
-&+ic(\omega)\sum_{n' m'}C_{nm}^{n'm'}E_{n'm'}(z,\omega)\nonumber\\
-&+i\frac{k^2}{2\beta(\omega)}P_{nm}^\text{NL}(z,\omega)\label{eq:equation1}
-\end{align}
+In a confocal microscope the illumination light has a double-cone
+shape. During acquisition of an image stack, each slice is delivered
+the same dosage due to energy conservation. The \emph{2-photon
+  microscope} only excites fluorophores in a point-like region
+surrounding the focus \cite{Denk1990} and therefore reduces
+dosage on out-of-focus fluorophores. However, the non-linear processes
+in the focus can induce more severe photochemical effects in the
+specimen.
 
-\paragraph{Figures.}
-Figures should be embedded in the document and labeled Fig. 1, Fig. 2, and so on.
-Subfigures use alphabetic lettering i.e. Fig. 1~(a). Please note that bitmap images should be inserted in sufficiently high resolution to ensure good printing quality, at least 300dpi. An example is given in Fig. \ref{fig:figure1}. 
-Please note also the notes on \LaTeX{} if you use it to prepare your manuscript.
+In ultra microscopy \cite{Siedentopf1903,Voie1993} a thin sheet of
+excitation light is sent from the side into the focal plane of a
+widefield microscope. This technique allowed to create time-lapse
+recordings of embryogenesis in exceptional quality \cite{Huisken2004}.
+Microscope objectives with big working distance are often used. This
+limits the achievable resolution. Mounting the specimen is another
+difficulty of this technique.
 
-\paragraph{References.}
-References should be numbered in square brackets in order of appearance, see \cite{Saleh1991}.
-An appropriate list of references should appear at the end of the paper.
-An example of proper formatting is given in this sample manuscript.
+Alternatively, using a standard high numerical aperture oil immersion
+objective one can illuminate a specimen that is embedded in a medium
+of lower optical density than the oil with a sheet of light at a
+highly inclined angle \cite{Tokunaga2008,Konopka2008}. However, this
+simple technique has a considerably smaller usable field of view.
 
-\paragraph{\LaTeX.}
-To make submission as easy as possible for you, we provide a DokDok style file \verb|dokdok.sty|. 
-This file loads all necessary packages and sets the parameters.
-We further provide a custom BIB\TeX style file \verb|dokdok.bst| which ensures proper formatting of the reference list.
+Dunsby describes a more sophisticated technique, with an increased
+field of view for oblique illumination of index-matched specimen in
+\cite{Dunsby2008}.
 
-However, there is a particular issue you should keep in mind when dealing with figures.
-Since we use the \verb|multicol| and \verb|float| package to typeset the manuscript, all figures need to be set with the \verb|\begin{figure}[H]|\dots{} option (except for figures spanning both columns which are set by \verb|\begin{figure*}|\dots{} as usual) and will appear exactly at the position in the text where they are placed as does Fig. \ref{fig:figure1} after this sentence.
+In \cite{Hoebe2007} a variant of a confocal microscope is developed,
+that illuminates the specimen according to local fluorophore
+concentration. Dim areas are only illuminated until the fluorophore
+content is confirmed to be below the threshold. Areas with high
+fluorophore content are only illuminated until a certain photon count
+is reached. Areas of intermediate brightness are illuminated for the
+full time. The resulting image is of the same perceived image quality
+as a conventional confocal image but at much lower dosage.
+
+For temporal focusing \cite{Oron2005} a ultra-short pulse is
+diffracted at a grating in the intermediate image plane and enters the
+back focal plane of the objective as a spectrum along a meridional
+line. Only in the focal plane, where all colours arrive
+simultaneously, is the intensity sufficient to excite the
+fluorophores. This technique has been combined with generalized phase
+contrast for spatial control \cite{Papagiakoumou2010}.
+
+Finally \cite{Levoy2009} is an microlens-based attempt to build a
+microscope for simultaneous detection of angular and spatial
+information about the light returning from the sample. As all
+light-field techniques a trade-off between spatial and angular
+resolution has to be made. This is unacceptable in many cases of high
+resolution microscopy. However applying their technique for
+illumination would give a microscope that is comparable to ours.
+
+\dokdoksection{Spatio-angular microscope} Our microscope contains two
+spatial light modulators (SLM). SLM1 is imaged into the back focal
+plane $P$ of the objective.
 
 \begin{figure}[H]
-\includegraphics[width=0.48\textwidth]{figure1.png}
+%\includegraphics[width=0.48\textwidth]{figure1.png}
+%\includegraphics[width=0.48\textwidth]
+{\scriptsize \input{memi-real.pdf_tex}}
 \caption{Some interesting pictures. (a) Schloss Oppurg. (b) Directions.}
 \label{fig:figure1}
 \end{figure}
-
-%% For figures spanning both columns, use:
-%\begin{figure*}
-%\includegraphics[width=0.48\textwidth]{figure1.png}
-%\caption{Some interesting pictures. (a) Schloss Oppurg. (b) Directions.}
-%\label{fig:figure1}
-%\end{figure*}
-
-\dokdoksection{Experimental Setup}
-
-The experiment will produce results from 7$^\text{th}$ to 11$^\text{th}$ October 2012 at Schloss Oppurg (schloss-oppurg.cjd.de) in Oppurg in Germany. For more details on the experimental layout see Fig.~\ref{fig:figure1}~(a) and Fig.~\ref{fig:figure1}~(b) for some close up on components of the setup.
-
-Four days of the conference will be devoted mostly to talks, which will be 20 to 30 Minutes each to give the author enough time to introduce important concepts \cite{ Service2010, Ryskin2010, Evans2011, Nifenecker2011, Zayats2005, Novotny1994} to the general audience.
-
-Auxiliary parts of the experiment will be poster sessions and group activities, which will be announced.
-
-
-\dokdoksection{Important Dates}
-\begin{description}
-	\item[June 1, 2012:] Deadline for the submission of this document.
-	\item[July 16, 2012:] Notifications on the acceptance of the submission as either oral presentation or poster presentation are sent.
-	\item[September 7, 2012:] Registration closes.
-	\item[October 7--11, 2012:] DoKDoK takes place at Schloss Oppurg.
-\end{description}
 
 \end{multicols}
 
@@ -104,47 +144,9 @@ Auxiliary parts of the experiment will be poster sessions and group activities, 
 \rule{0.75\textwidth}{1pt}
 \end{center}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% BIBLIOGRAPHY USING BIBTeX
-%%
-
 \bibliographystyle{dokdok}
-\bibliography{biblio}
+\bibliography{all}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% If you are NOT using BIBTEX, please follow this scheme:
-%%
-
-%\begin{thebibliography}{1}
-%
-%\bibitem{Saleh1991}
-%B.~Saleh, M.~Teich, {\it Fundamentals of Photonics\/} (John Wiley \& Sons, New
-  %York, 1991).
-%
-%\bibitem{Service2010}
-%R.~F. Service, A.~Cho, {\it Science\/} {\bf 330}, 1622 (2010).
-%
-%\bibitem{Ryskin2010}
-%G.~Ryskin, {\it Reports on Progress in Physics\/} {\bf 73}, 122801 (2010).
-%
-%\bibitem{Evans2011}
-%J.~A. Evans, J.~G. Foster, {\it Science\/} {\bf 331}, 721 (2011).
-%
-%\bibitem{Nifenecker2011}
-%H.~Nifenecker, {\it Reports on Progress in Physics\/} {\bf 74}, 022801 (2011).
-%
-%\bibitem{Zayats2005}
-%A.~Zayats, I.~Smolyaninov, A.~Maradudin, {\it Physics Reports\/} {\bf 408}, 131
-  %(2005).
-%
-%\bibitem{Novotny1994}
-%L.~Novotny, C.~Hafner, {\it Physical Review E\/} {\bf 50}, 4094 (1994).
-%
-%\end{thebibliography}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
 
