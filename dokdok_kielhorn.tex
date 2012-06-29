@@ -1,14 +1,13 @@
-%% This is a template that demonstrates the submission of a contribution to DoKDoK
-%%
 \documentclass[a4paper, 11pt]{article}
 
-\usepackage[utf8]{inputenc} %if your LaTeX editor does not support Unicode (UTF8), 
-% change this option to ansinew or latin1 
-% if you need additional packages, load them here, but mind possible interference
-% with the DokDok package!
+\usepackage[utf8]{inputenc} %if your LaTeX editor does not support
+% Unicode (UTF8),
+% change this option to ansinew or latin1 if you need additional
+% packages, load them here, but mind possible interference with the
+% DokDok package!
 \usepackage{courier}
-% now, load the generic DokDok package
 \usepackage{dokdok}
+\usepackage{refcheck}
 
 \usepackage{color}
 
@@ -16,7 +15,8 @@
 
 \dokdoktitle{Spatio-angular microscopy}
 
-\dokdokauthor{Martin Kielhorn\sup{*1,2}, and Rainer Heintzmann\sup{1,2,3}}
+\dokdokauthor{Martin Kielhorn\sup{*1,2}, and Rainer
+  Heintzmann\sup{1,2,3}}
 
 \dokdokaffiliation{ \sup{1}Institute of Photonic Technology,
   Albert-Einstein Str. 9, 07745 Jena, Germany}
@@ -61,45 +61,19 @@ study and the accuracy of the result of a given experiment, however,
 is limited by photobleaching and light induced toxicity in the
 biological specimen.
 
-When fluorophores are optically excited, they occasionally end up in
-the first excited triplet state $T_1$ by intersystem crossing. The
-lifetimes of $T_1$ are sufficiently long, that the excited
-fluorophores react with molecular oxygen in a triplet--triplet
-annihilation reaction \cite{Linde2011a}. The resulting singulet oxygen
-will react quickly with neighbouring molecules and can locally damage
-the cell. This process can lead to cell death or more subtle effects
-such as the suppression of normal cell signalling functions.
+One of the by-products of fluorophore excitation is reactive singulet
+oxygen. The oxydative stress can lead to cell death or more subtle
+effects such as the suppression of normal cell signalling functions.
 
 In order to extend experiments in time and to follow the fate of cells
-over many generations, a substantial reduction of unnecessary
-illumination would be desired.
+over many generations, a substantial reduction illumination would be
+desired.
 
-In a confocal microscope the illumination light has a double-cone
-shape. During acquisition of an image stack, each slice is delivered
-the same dosage due to energy conservation. The \emph{2-photon
-  microscope} only excites fluorophores in a point-like region
-surrounding the focus \cite{Denk1990} and therefore reduces
-dosage on out-of-focus fluorophores. However, the non-linear processes
-in the focus can induce more severe photochemical effects in the
-specimen.
-
-In ultra microscopy \cite{Siedentopf1903,Voie1993} a thin sheet of
-excitation light is sent from the side into the focal plane of a
-widefield microscope. This technique allowed to create time-lapse
-recordings of embryogenesis in exceptional quality \cite{Huisken2004}.
-Microscope objectives with big working distance are often used. This
-limits the achievable resolution. Mounting the specimen is another
-difficulty of this technique.
-
-Alternatively, using a standard high numerical aperture oil immersion
-objective one can illuminate a specimen that is embedded in a medium
-of lower optical density than the oil with a sheet of light at a
-highly inclined angle \cite{Tokunaga2008,Konopka2008}. However, this
-simple technique has a considerably smaller usable field of view.
-
-Dunsby describes a more sophisticated technique, with an increased
-field of view for oblique illumination of index-matched specimen in
-\cite{Dunsby2008}.
+In ultra microscopy a thin sheet of excitation light is sent from the
+side along the focal plane of a widefield microscope. Its results are
+impressive \cite{Huisken2004}. However, mounting the samples is
+difficult and long range objectives are used, which limit the
+collection angles, detection efficiency and resolution.
 
 In \cite{Hoebe2007} a variant of a confocal microscope is developed,
 that illuminates the specimen according to local fluorophore
@@ -110,35 +84,64 @@ is reached. Areas of intermediate brightness are illuminated for the
 full time. The resulting image is of the same perceived image quality
 as a conventional confocal image but at much lower dosage.
 
-For temporal focusing \cite{Oron2005} a ultra-short pulse is
-diffracted at a grating in the intermediate image plane and enters the
-back focal plane of the objective as a spectrum along a meridional
-line. Only in the focal plane, where all colours arrive
-simultaneously, is the intensity sufficient to excite the
-fluorophores. This technique has been combined with generalized phase
-contrast for spatial control \cite{Papagiakoumou2010}.
+Temporal focusing (TF) and generalized phase contrast (GPC) have been
+combined in \cite{Papagiakoumou2010}. For TF the ultra-short
+excitation pulse is diffracted on a grating in an intermediate
+image. The spectral components enter along a line on the pupil of the
+objective and only excite fluorophores in a sheet around the focal
+plane, where they arrive simultaneously. The GPC allows spatial
+exposure control in the focal plane.
 
-Finally \cite{Levoy2009} is a microlens-based attempt to build a
-microscope for simultaneous detection of angular and spatial
-information about the light returning from the sample. As all
-light-field techniques a trade-off between spatial and angular
-resolution has to be made. This is unacceptable in many cases of high
-resolution microscopy. However applying their technique for
-illumination would give a microscope that is comparable to ours.
+In \cite{Levoy2009} a microlens-based microscope for simultaneous
+detection of angular and spatial information about the light returning
+from the sample is shown. Applying their technique for illumination
+would give a spatio-angular excitation microscope comparable to
+ours. It would allow simultaneous exposure of in-focus areas with
+different angles. However, the microlenses define the trade-off
+between angular and spatial resolution. Our approach is more flexible
+and better suited as a prototype to establish useful illumination
+schemes.
 
-\dokdoksection{Spatio-angular microscope} SLM1 is imaged into the back
-focal plane $P$ of the objective. SLM2 is conjugate to the focal plane
-$F$ in sample space.  SLM1 controls the illumination angles while SLM2
-selects the area in the sample, that will be illuminated.
+\dokdoksection{Spatio-angular microscope} Figure \ref{fig:system}
+shows a schematic of our microscope. A rotating microlens array and a
+light tunnel provide uniform illumination in the plane $F'''$, which
+is conjugate to the field $F$ in the specimen. SLM1 is an array of
+$256\times 256$ torsional micro-mirrors. When the mirrors are tilted,
+they act as a diffraction grating. The aperture $B_1$ only transmits
+the zero order of the grating and the lens $L_2$ forms an intensity
+image of SLM1 in $P'$.
+
+A polarizing beam splitter illuminates SLM2. This display is based on
+ferroelectric liquid crystals (FLC). The optic axis of the FLC in each
+pixel can have two orientations, depending on the applied voltage. An
+on-pixel acts as a $\lambda/4-$plate and rotates the returning light
+by $90^\circ$. An off-pixel has no effect on the polarization.
+
+
+ SLM1 is imaged into the back focal plane $P$ of the
+objective. SLM2 is conjugate to the focal plane $F$ in sample space.
+SLM1 controls the illumination angles while SLM2 selects the area in
+the sample, that will be illuminated.
 
 \begin{figure}[H]
 %\includegraphics[width=0.48\textwidth]{figure1.png}
 %\includegraphics[width=0.48\textwidth]
 {\scriptsize \input{memi-real.pdf_tex}}
-\caption{Some interesting pictures. (a) Schloss Oppurg. (b) Directions.}
-\label{fig:figure1}
+\caption{Schematic of our microscope. SLM = spatial light modulator,
+  PBS = polarizing beam splitter, DBS = dichroitic beam splitter, TL =
+  tube lens, B = circular aperture.}
+\label{fig:system}
 \end{figure}
 
+\dokdoksection{Conclusion} We built a microscope that can
+simultaneously control the pattern of the excitation illumination in
+the pupil $P$ of the objective and the front focal plane $F$ in the
+specimen.
+
+The two separate displays give the flexibility that is needed in order
+to investigate illumination strategies while the Heisenberg
+uncertainty principle prevents tight simultaneous control in the
+Fourier planes $F$ and $P$.
 \end{multicols}
 
 \begin{center}
@@ -147,8 +150,6 @@ selects the area in the sample, that will be illuminated.
 
 \bibliographystyle{dokdok}
 \bibliography{all}
-
-
 \end{document}
 
 
