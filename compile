@@ -1,0 +1,12 @@
+for i in *.svg; do
+    inkscape $i --export-latex --export-pdf=build/`basename $i .svg`.pdf
+done
+cp dokdok_kielhorn.tex build
+cp dokdok.sty build
+cp all.bib build
+cd build
+bibtex dokdok_kielhorn
+pdflatex dokdok_kielhorn
+pdflatex dokdok_kielhorn
+pdflatex dokdok_kielhorn
+cd ..

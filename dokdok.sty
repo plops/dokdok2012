@@ -1,0 +1,30 @@
+\usepackage{mathptmx}	 %select TIMES as default font
+
+% if your system misses some of these packages, please get them from ctan.org:
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage[top=2.5cm,bottom=3.5cm,left=2cm,right=2cm]{geometry}
+
+% some formatting stuff:
+\setlength\parindent{12pt}
+\setlength\parskip{0pt}
+\pagestyle{empty}
+
+% provide DokDok specific commands:
+\newcommand{\dokdoksection}[1]{\section*{\centering\fontsize{11pt}{12.5pt}\textsc{#1}}}
+\newcommand{\dokdoktitle}[1]{{\fontsize{12pt}{13.5pt}\selectfont\bfseries 
+\begin{center} \parbox{15cm}{\centering #1} \end{center} }}
+\newcommand{\dokdokauthor}[1]{{\fontsize{11.5pt}{12pt}\selectfont 
+\begin{center} #1 \end{center} }}
+\newcommand{\dokdokaffiliation}[1]{{\fontsize{10.5pt}{11.5pt}\fontshape{it}\selectfont 
+\begin{flushright} \parbox{10cm}{\raggedleft #1} \end{flushright} }}
+\renewcommand{\sup}[1]{\textsuperscript{#1}}
+\newcommand{\dokdokemail}[1]{{\fontsize{10.5pt}{11.5pt}\selectfont
+
+\sup{*}Corresponding Author: \textit{#1}
+}}
+
+% set the Bibname to nothing & remove space
+\renewcommand{\refname}{\vspace{-6ex}}
