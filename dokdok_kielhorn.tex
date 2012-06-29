@@ -13,9 +13,10 @@
 
 \begin{document}
 
-\dokdoktitle{Spatio-angular microscopy}
+\dokdoktitle{Spatio-angular microscopy --- protect your specimen from
+  unnecessary illumination.}
 
-\dokdokauthor{Martin Kielhorn\sup{*1,2}, and Rainer
+\dokdokauthor{Martin Kielhorn\sup{*1,2}, Susan Cox\sup{2}, and Rainer
   Heintzmann\sup{1,2,3}}
 
 \dokdokaffiliation{ \sup{1}Institute of Photonic Technology,
@@ -30,7 +31,7 @@
   Germany}
 
 \dokdokemail{kielhorn.martin@gmail.com}
-\raggedbottom
+%\raggedbottom
 
 \begin{abstract}
   \noindent \bfseries{ Photobleaching and phototoxicity pose a problem
@@ -106,16 +107,13 @@ schemes.
 
 \dokdoksection{Spatio-angular microscope} Figure \ref{fig:system}
 shows a schematic of our microscope. A rotating micro-lens array and a
-light tunnel provide uniform illumination in the plane $F'''$, which
-is conjugate to the field $F$ in the specimen. SLM1 is an array of
-$256\times 256$ torsional micro-mirrors. When the mirrors are tilted,
-they act as a diffraction grating. The aperture $B_1$ only transmits
-the zero order of the grating and the lens $L_2$ forms an intensity
-image of SLM1 in $P'$.
-
-
+light tunnel provide uniform illumination in the plane $F'''$. SLM1 is
+an array of torsional micro-mirrors. When the mirrors are tilted, they
+act as a diffraction grating. The aperture $B_1$ only transmits the
+zero order of the grating and the lens $L_2$ forms an intensity image
+of SLM1 in $P'$.
 \begin{figure}[H]
-\centeringx
+\centering
 {\scriptsize \input{memi-real.pdf_tex}}
 \caption{Schematic of our microscope. SLM = spatial light modulator,
   PBS = polarizing beam splitter, DBS = dichroitic beam splitter, TL =
@@ -124,20 +122,20 @@ image of SLM1 in $P'$.
 \label{fig:system}
 \end{figure}
 
+\noindent
 A polarizing beam splitter illuminates SLM2. This display is based on
 ferroelectric liquid crystals (FLC). The optic axis of the FLC in each
-pixel can have two orientations, depending on the applied voltage. An
-on-pixel acts as a $\lambda/4-$plate and rotates the returning light
-by $90^\circ$. An off-pixel has no effect on the polarization.
+pixel has two possible orientations, depending on the applied
+voltage. On-pixels act as $\lambda/4-$plates and rotate light by
+$90^\circ$. Off-pixel have no effect on the polarization.
 
 
- SLM1 is imaged into the back focal plane $P$ of the
-objective. SLM2 is conjugate to the focal plane $F$ in sample space.
-SLM1 controls the illumination angles while SLM2 selects the area in
-the sample, that will be illuminated.
+SLM1 is imaged into the back focal plane $P$ of the objective. SLM2 is
+conjugate to the focal plane $F$ in sample space.  SLM1 controls the
+illumination angles while SLM2 selects the area in the sample, that
+will be illuminated.
 
 
-\paragraph{Experimental verification.}
 The diagram in Figure \ref{fig:ray}~right, depicts a three-dimensional
 distribution of beads with \unit[2]{$\mu$m} diameter. The data was
 obtained by projecting gratings with SLM2 into the specimen and
@@ -173,6 +171,13 @@ The two separate displays give the flexibility that is needed in order
 to investigate illumination strategies while the Heisenberg
 uncertainty principle prevents tight simultaneous control in the
 Fourier planes $F$ and $P$.
+
+{\scriptsize
+\paragraph{Acknowledgements.}
+We thank Jakub Nedbal, Kai Wicker and our project partners at
+Fraunhofer IPMS (Dresden, Germany), Institute Pasteur (Paris, France),
+In-Vision (Vienna, Austria) and KLA Tencor (Migdal Ha'emek,
+Israel). This work was funded by EU FP7 project 215597.}
 \end{multicols}
 
 \begin{center}
