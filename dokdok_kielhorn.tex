@@ -7,8 +7,8 @@
 % DokDok package!
 \usepackage{courier}
 \usepackage{dokdok}
-\usepackage{refcheck}
-
+%\usepackage{refcheck}
+\usepackage{units}
 \usepackage{color}
 
 \begin{document}
@@ -30,6 +30,7 @@
   Germany}
 
 \dokdokemail{kielhorn.martin@gmail.com}
+\raggedbottom
 
 \begin{abstract}
   \noindent \bfseries{ Photobleaching and phototoxicity pose a problem
@@ -54,6 +55,7 @@ energy. The fluorescence light of in-focus fluorophores is formed into
 a sharp image, light from out-of-focus areas deteriorates the image by
 creating a blurred background.
 
+ 
 Nowadays it is common to observe the dynamic properties of
 fluorescently labelled proteins and extract quantitative information
 about the structures they form within living cells. The length of the
@@ -61,8 +63,8 @@ study and the accuracy of the result of a given experiment, however,
 is limited by photobleaching and light induced toxicity in the
 biological specimen.
 
-One of the by-products of fluorophore excitation is reactive singulet
-oxygen. The oxydative stress can lead to cell death or more subtle
+One of the by-products of fluorophore excitation is reactive singlet
+oxygen. The oxidative stress can lead to cell death or more subtle
 effects such as the suppression of normal cell signalling functions.
 
 In order to extend experiments in time and to follow the fate of cells
@@ -84,7 +86,7 @@ is reached. Areas of intermediate brightness are illuminated for the
 full time. The resulting image is of the same perceived image quality
 as a conventional confocal image but at much lower dosage.
 
-Temporal focusing (TF) and generalized phase contrast (GPC) have been
+Temporal focusing (TF) and generalised phase contrast (GPC) have been
 combined in \cite{Papagiakoumou2010}. For TF the ultra-short
 excitation pulse is diffracted on a grating in an intermediate
 image. The spectral components enter along a line on the pupil of the
@@ -92,24 +94,35 @@ objective and only excite fluorophores in a sheet around the focal
 plane, where they arrive simultaneously. The GPC allows spatial
 exposure control in the focal plane.
 
-In \cite{Levoy2009} a microlens-based microscope for simultaneous
+In \cite{Levoy2009} a micro-lens-based microscope for simultaneous
 detection of angular and spatial information about the light returning
 from the sample is shown. Applying their technique for illumination
 would give a spatio-angular excitation microscope comparable to
 ours. It would allow simultaneous exposure of in-focus areas with
-different angles. However, the microlenses define the trade-off
+different angles. However, the micro-lenses define the trade-off
 between angular and spatial resolution. Our approach is more flexible
 and better suited as a prototype to establish useful illumination
 schemes.
 
 \dokdoksection{Spatio-angular microscope} Figure \ref{fig:system}
-shows a schematic of our microscope. A rotating microlens array and a
+shows a schematic of our microscope. A rotating micro-lens array and a
 light tunnel provide uniform illumination in the plane $F'''$, which
 is conjugate to the field $F$ in the specimen. SLM1 is an array of
 $256\times 256$ torsional micro-mirrors. When the mirrors are tilted,
 they act as a diffraction grating. The aperture $B_1$ only transmits
 the zero order of the grating and the lens $L_2$ forms an intensity
 image of SLM1 in $P'$.
+
+
+\begin{figure}[H]
+\centeringx
+{\scriptsize \input{memi-real.pdf_tex}}
+\caption{Schematic of our microscope. SLM = spatial light modulator,
+  PBS = polarizing beam splitter, DBS = dichroitic beam splitter, TL =
+  tube lens. %, B = circular aperture. % this doesn't fit1
+}
+\label{fig:system}
+\end{figure}
 
 A polarizing beam splitter illuminates SLM2. This display is based on
 ferroelectric liquid crystals (FLC). The optic axis of the FLC in each
@@ -123,15 +136,33 @@ objective. SLM2 is conjugate to the focal plane $F$ in sample space.
 SLM1 controls the illumination angles while SLM2 selects the area in
 the sample, that will be illuminated.
 
+
+\paragraph{Experimental verification.}
+The diagram in Figure \ref{fig:ray}~right, depicts a three-dimensional
+distribution of beads with \unit[2]{$\mu$m} diameter. The data was
+obtained by projecting gratings with SLM2 into the specimen and
+reconstructing optically sectioned slices. After the positions of the
+beads were known, they were selectively illuminated with SLM1 patterns
+as shown in \ref{fig:ray}~left. These patterns were computed by
+finding areas in the pupil that excite the target bead without
+exposing out-of-focus beads.
+
 \begin{figure}[H]
-%\includegraphics[width=0.48\textwidth]{figure1.png}
-%\includegraphics[width=0.48\textwidth]
-{\scriptsize \input{memi-real.pdf_tex}}
-\caption{Schematic of our microscope. SLM = spatial light modulator,
-  PBS = polarizing beam splitter, DBS = dichroitic beam splitter, TL =
-  tube lens, B = circular aperture.}
-\label{fig:system}
+ \centering
+ \includegraphics[width=0.48\textwidth]{bfp2-bfp-images-and-model}
+\caption{{\bf right:} Sphere model of a
+  sample with three-dimensionally distributed beads. {\bf left:}
+  Optimized SLM1 masks to illuminate bead 26 or bead 5.}
+\label{fig:ray}
 \end{figure}
+
+
+A similar approach can be used for time-laps imaging of nuclei in
+developing embryos. Their structure doesn't change much from one time
+frame to the next and one could predict the position of the nuclei
+using the current image stack, while preparing the illumination
+patterns for the acquisition of the next stack.
+
 
 \dokdoksection{Conclusion} We built a microscope that can
 simultaneously control the pattern of the excitation illumination in
@@ -150,6 +181,6 @@ Fourier planes $F$ and $P$.
 
 \bibliographystyle{dokdok}
 \bibliography{all}
-\end{document}
+\end{document} 
 
 
